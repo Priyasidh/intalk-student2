@@ -4,7 +4,6 @@ const studentInfo=require('../models/userModel')
 const mark = sequelize.define(
     'mark',
     {
-        // Model attributes are defined here
         rno: {
             type: DataTypes.INTEGER,
             references:{
@@ -14,7 +13,6 @@ const mark = sequelize.define(
         },
         subject: {
             type: DataTypes.STRING,
-            // allowNull defaults to true
         },
         marks_obtained: {
             type: DataTypes.FLOAT
@@ -31,12 +29,10 @@ const mark = sequelize.define(
 
         tableName:'mark',
         createdAt:false,
-        updatedAt:false //create update column are deleted 
-        // Other model options go here
+        updatedAt:false 
     },
 );
 
-// `sequelize.define` also returns the model
 console.log(mark === sequelize.models.mark); // true
 
 

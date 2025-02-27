@@ -4,7 +4,7 @@ const sequelize =require('../config/db/mySqlConfig');
 const studentinfo = sequelize.define(
     'studentinfo',
     {
-        // Model attributes are defined here
+        
         rno: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -13,7 +13,6 @@ const studentinfo = sequelize.define(
         },
         name: {
             type: DataTypes.STRING,
-            // allowNull defaults to true
         },
         email: {
             type: DataTypes.STRING,
@@ -33,12 +32,11 @@ const studentinfo = sequelize.define(
 
         tableName:'studentinfo',
         createdAt:false,
-        updatedAt:false //create update column are deleted 
-        // Other model options go here
+        updatedAt:false 
     },
 );
 
-// `sequelize.define` also returns the model
+
 console.log(studentinfo === sequelize.models.studentinfo); // true
 
 

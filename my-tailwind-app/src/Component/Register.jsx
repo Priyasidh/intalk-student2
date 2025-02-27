@@ -9,7 +9,6 @@ function Register() {
   const [email,setemail]=useState('');
   const[message,setmessage]=useState('');
 
-
   const navigate=useNavigate();
 
   const handleClick=async(e)=>{
@@ -18,7 +17,8 @@ function Register() {
         const result=await axios.post("http://localhost:8080/api/signup",{
           username,
           password,
-          email
+          email,
+
         // },{
         //   headers: {
         //     'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ function Register() {
                 <label className="text-gray-700 text-sm font-medium mb-1">Password</label>
               </div>
               <div className="">
-                <input className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="password" value={password} id="" onChange={(e)=>setpassword(e.target.value)}/>  
+                <input className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="password" name="password" value={password} id="" onChange={(e)=>setpassword(e.target.value)}/>  
               </div>   
           </div>
 
